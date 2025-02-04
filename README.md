@@ -113,8 +113,8 @@ This project is **open-source** under the [MIT License](LICENSE).
 ---
 
 ## 👤 Author
-- **Your Name**
-- GitHub: [@your-username](https://github.com/YOUR-USERNAME)
+- **Reese Ludwick**
+- GitHub: [@reese8272](https://github.com/reese8272)
 
 ---
 
