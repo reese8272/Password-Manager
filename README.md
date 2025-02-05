@@ -10,7 +10,8 @@ A **secure** and **simple** password manager built with Python. This project enc
 - **Master password** protection with key derivation (`PBKDF2HMAC`)
 - Ability to **add, view, and overwrite** stored passwords
 - Automatic encryption key management
-- Uses a **.gitignore** to prevent sensitive files from being tracked
+- Uses a **SQLite database (`passwords.db`)** for secure password storage
+- **.gitignore** prevents sensitive files from being tracked
 
 ---
 
@@ -39,7 +40,7 @@ python password_manager.py
 
 ### 🔑 Encryption & Security
 - A **master password** is used to derive a secure encryption key using **PBKDF2HMAC**.
-- The program securely stores **login credentials** (`account | encrypted password`) in `passwords.txt`.
+- The program securely stores **login credentials** (`account | encrypted password`) in an **SQLite database (`passwords.db`)**.
 - Encryption key is stored in `key.key`, and a **random salt** is used (`salt.bin`).
 
 ### 📂 File Structure
@@ -48,7 +49,7 @@ python password_manager.py
 │── password_manager.py  # Main script
 │── key.key              # Encryption key (DO NOT SHARE)
 │── salt.bin             # Salt for key derivation
-│── passwords.txt        # Encrypted stored passwords
+│── passwords.db         # SQLite database for password storage
 │── .gitignore           # Prevents tracking of sensitive files
 │── README.md            # Project documentation
 ```
@@ -71,12 +72,12 @@ python password_manager.py
    ```
 2. Select `'a'` to add a new password.
 3. Enter the **account name** and **password**.
-4. Password will be securely stored.
+4. Password will be securely stored in the **SQLite database (`passwords.db`)**.
 
 ### 👀 Viewing Stored Passwords
 1. Run the program.
 2. Select `'v'` to view stored passwords.
-3. The program will decrypt and display them.
+3. The program will decrypt and display them from the **database**.
 
 ### ❌ Exiting the Program
 - Press `'q'` to **quit**.
@@ -95,6 +96,7 @@ Thumbs.db
 .env
 key.key
 salt.bin
+passwords.db
 *.log
 ```
 
@@ -115,6 +117,4 @@ This project is **open-source** under the [MIT License](LICENSE).
 ## 👤 Author
 - **Reese Ludwick**
 - GitHub: [@reese8272](https://github.com/reese8272)
-
----
 
